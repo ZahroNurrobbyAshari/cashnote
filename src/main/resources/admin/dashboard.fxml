@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.cashnote.DashboardController">
+    <stylesheets>
+        <URL value="@/styles/dashboard.css" />
+    </stylesheets>
+   <children>
+      <AnchorPane layoutX="-1.0" prefHeight="720.0" prefWidth="275.0" style="-fx-background-color: #3A38AB;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-0.0" AnchorPane.rightAnchor="1092.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView layoutX="39.0" layoutY="42.0" AnchorPane.leftAnchor="26.0" AnchorPane.topAnchor="34.0">
+               <image>
+                  <Image url="@../styles/logo.png" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
+      <AnchorPane layoutX="118.0" layoutY="114.0" prefHeight="720.0" prefWidth="1191.0" style="-fx-background-color: #fff; -fx-background-radius: 50 0 0 50;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="95.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="44.0" layoutY="57.0" text="CashNote" AnchorPane.leftAnchor="46.0" AnchorPane.topAnchor="34.0">
+               <font>
+                  <Font name="Nunito Sans Bold" size="34.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <VBox prefHeight="299.0" prefWidth="158.0" spacing="39.0" AnchorPane.bottomAnchor="212.0" AnchorPane.topAnchor="209.0">
+         <children>
+            <AnchorPane prefHeight="67.0" prefWidth="67.0" style="-fx-background-color: #ffff; -fx-background-radius: 15;">
+               <VBox.margin>
+                  <Insets left="55.0" right="28.0" />
+               </VBox.margin>
+               <effect>
+                  <DropShadow height="1.0" offsetY="4.0" radius="0.0" width="0.0" color="#c5c5c5">
+                    
+                  </DropShadow>
+               </effect>
+               <children>
+                  <FontIcon iconColor="#f51711" iconLiteral="fas-tachometer-alt" iconSize="35" layoutX="18.0" layoutY="48.0" selectionEnd="0" text="" />
+               </children>
+            </AnchorPane>
+            <FontIcon iconLiteral="fas-chart-line" iconSize="28" >
+               <VBox.margin>
+                  <Insets left="34.0" />
+               </VBox.margin>
+            </FontIcon>
+            <FontIcon iconLiteral="fas-chart-line" iconSize="28" layoutX="44.0" layoutY="141.0" rotate="180.0" >
+               <VBox.margin>
+                  <Insets left="34.0" />
+               </VBox.margin>
+            </FontIcon>
+            <FontIcon iconLiteral="fas-exclamation-circle" iconSize="28">
+               <VBox.margin>
+                  <Insets left="34.0" />
+               </VBox.margin>
+            </FontIcon>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

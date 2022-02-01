@@ -1,0 +1,14 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+@font-face {
+  font-family: 'NunitoSans';
+  src: url('../fonts/Nunito_Sans/NunitoSans-Bold.ttf');
+}
+
+.mainFxmlClass {
+    -fx-background-image: url("bg.jpg");
+    -fx-background-size: 100% 100%;  
+}
+
