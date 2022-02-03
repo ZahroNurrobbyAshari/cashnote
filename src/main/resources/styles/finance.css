@@ -1,0 +1,41 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+
+.split-pane {
+   -fx-background-color: #F5F6FD;
+   -fx-background-radius: 40;
+}
+
+.split-pane > .split-pane-divider{
+    -fx-background-color:  #ffffff;
+   
+}
+
+.split-pane > .left-split-pane {
+    -fx-background-radius: 40;
+    -fx-border-radius: 40;
+}
+
+.table-view {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 10;
+}
+
+.table-view  .column-header-background {
+    -fx-background-color: #3A38AB; 
+    -fx-background-radius: 10 10 0 0;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-background-color: transparent;
+    -fx-size: 40; 
+}
+
+.table-view .column-header .label{
+    -fx-text-fill: #ffffff;
+}

@@ -5,3 +5,90 @@
 .mainFxmlClass {
 
 }
+
+.table-view {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 10;
+}
+
+.table-view  .column-header-background {
+    -fx-background-color: #F51711; 
+    -fx-background-radius: 10 10 0 0;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-background-color: transparent;
+    -fx-size: 40; 
+}
+
+.table-view .column-header .label{
+    -fx-text-fill: #ffffff;
+}
+
+* {
+	-fx-primary-color:  #f51711;
+	-fx-secondary-color: #4B6EAF;
+	-fx-light-grey-color: #d1d1d1;
+        -fx-blue-focus-color: #3A38AB;
+	-fx-focus-color: -fx-secondary-color;
+}
+
+.date-picker > .text-field{
+    -fx-background-color: white;
+    -fx-border-color: -fx-primary-color;
+    -fx-background-radius:10 0 0 10;
+    -fx-border-radius: 10 0 0 10;
+}
+
+.date-picker {
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+}
+
+.date-picker .arrow-button {
+	-fx-background-color: -fx-primary-color;
+	-fx-background-radius: 0 10 10 0;
+        -fx-border-color: -fx-primary-color;
+        -fx-border-radius: 0 10 10 0;
+}
+.date-picker .arrow-button:hover {
+	-fx-background-color: -fx-secondary-color;
+}
+.date-picker .arrow-button .arrow {
+	-fx-background-color: white;
+}
+.date-picker .cell {
+	-fx-background-color: white;
+}
+.date-picker .cell:hover {
+	-fx-background-color: -fx-light-grey-color;
+}
+.date-picker .cell:focused {
+	-fx-background-color: -fx-light-grey-color;
+}
+.date-picker .selected {
+	-fx-background-color: -fx-primary-color;
+	-fx-text-fill: white;
+}
+.date-picker .selected:focused {
+	-fx-background-color: -fx-primary-color;
+	-fx-text-fill: white;
+}
+.date-picker-popup  {
+	-fx-border-color: transparent;
+        -fx-border-radius: 10;
+        -fx-background-radius: 10;
+}
+.date-picker-popup .month-year-pane {
+	-fx-background-color: -fx-primary-color;
+}
+.date-picker-popup .month-year-pane .label {
+	-fx-text-fill: white;
+}
+.date-picker-popup .week-number-cell {
+	-fx-text-fill: -fx-secondary-color;
+}
+.date-picker-popup .spinner .button .left-arrow,
+.date-picker-popup .spinner .button .right-arrow {
+	-fx-background-color: white;
+}
