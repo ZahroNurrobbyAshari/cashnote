@@ -15,13 +15,13 @@ public class dbConnection {
     
     // init jdbc parameter
      static final String JDBC_DRIVER = "com.mysql.jdbc.driver";
-     static final String DB_URL = "jdbc:mysql://localhost/ta_pbo";
+     static final String DB_URL = "jdbc:mysql://localhost:3306/ta_pbo";
      static final String DB_USER = "root";
      static final String DB_PASSWORD = "";
      
      public static Connection connect(){
          try {
-             Class.forName("com.mysql.jdbc.driver");
+             Class.forName("com.mysql.jdbc.Driver");
              System.out.println("Driver Load");
              Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
              return connection;

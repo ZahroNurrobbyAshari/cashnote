@@ -9,4 +9,11 @@ module com.mycompany.cashnote {
 
     opens com.mycompany.cashnote to javafx.fxml;
     exports com.mycompany.cashnote;
+    opens adminController to javafx.fxml;
+    exports adminController;
+    opens authController to javafx.fxml;
+    exports authController;
+    opens waliKelasController to javafx.fxml;
+    exports waliKelasController;
+    exports waliKelasModel;
 }
