@@ -1,2 +1,9 @@
-com\mycompany\cashnote\App.class
-module-info.class
+waliKelasController\FinanceController.class
+adminController\OutcomeController.class
+utilities\dbConnection.class
+waliKelasModel\StudentModel.class
+adminController\ReportController.class
+waliKelasController\StudentController.class
+waliKelasController\InvoiceController.class
+adminController\DashboardController.class
+adminController\IncomeController.class

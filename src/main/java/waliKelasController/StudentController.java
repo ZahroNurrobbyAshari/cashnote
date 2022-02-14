@@ -19,8 +19,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import utilities.dbConnection;
+import database.dbConnection;
 import waliKelasModel.StudentModel;
 
 /**
@@ -40,6 +41,9 @@ public class StudentController implements Initializable {
     private TableColumn<StudentModel, String> col_number;
     @FXML
     private TableColumn<StudentModel, String> col_total_paid;
+    @FXML
+    private TextField txt_name;
+ 
     
     ObservableList<StudentModel> list = FXCollections.observableArrayList();
     
@@ -48,7 +52,8 @@ public class StudentController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+//        
+
         try {
             Connection conn = dbConnection.connect();
             ResultSet rs = conn.createStatement().executeQuery("SELECT*FROM student");
@@ -60,6 +65,8 @@ public class StudentController implements Initializable {
         } catch (SQLException e) {
             Logger.getLogger(StudentController.class.getName()).log(Level.SEVERE, null,e);
         }
+        
+        
         
         col_id.setCellValueFactory(new PropertyValueFactory<>("student_id"));
         col_name.setCellValueFactory(new PropertyValueFactory<>("name"));
