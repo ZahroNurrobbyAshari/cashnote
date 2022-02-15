@@ -8,16 +8,17 @@ package waliKelasModel;
  *
  * @author zahro
  */
-public class StudentModel {
+public class Students {
 
     String student_id, name, number, total_paid;
 
-    public StudentModel(String student_id, String name, String number, String total_paid) {
+    public Students(String student_id, String name, String number, String total_paid) {
         this.student_id = student_id;
         this.name = name;
         this.number = number;
         this.total_paid = total_paid;
     }
+
 
     public String getStudent_id() {
         return student_id;
