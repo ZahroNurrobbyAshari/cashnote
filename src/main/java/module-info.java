@@ -16,5 +16,5 @@ module com.mycompany.cashnote {
     exports auth;
     opens waliKelasController to javafx.fxml;
     exports waliKelasController;
-    exports waliKelasModel;
+    exports model;
 }

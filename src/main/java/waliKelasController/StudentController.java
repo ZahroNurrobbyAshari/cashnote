@@ -24,7 +24,7 @@ import java.sql.Statement;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
-import waliKelasModel.Students;
+import model.Students;
 
 /**
  * FXML Controller class
