@@ -178,11 +178,17 @@ public class IncomeController implements Initializable {
         String nominal = txt_nominal.getText();
         String dateStr = date.getValue().toString();
         String desc = txt_desc.getText();
-        String query = "INSERT INTO income(student_id,nominal,date,description) VALUES('"+student_id+"','"+nominal+"','"+dateStr+"','"+desc+"')";
+        String outcome = "0";
+        String ref_type = "student";
+        String query = "INSERT INTO income(student_id,nominal,date,description) "
+                + "VALUES('"+student_id+"','"+nominal+"','"+dateStr+"','"+desc+"')";
+        
+        String query_archive = "INSERT INTO archive(income,outcome,description,ref_type,ref_id) VALUES('"+nominal+"','"+outcome+"','"+desc+"','"+ref_type+"','"+student_id+"')";
         
         try {
             st = conn.createStatement();
             st.executeUpdate(query);
+            st.executeUpdate(query_archive);
         } catch (Exception e) {
             e.printStackTrace();
         }

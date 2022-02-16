@@ -49,7 +49,7 @@ public class LoginController implements Initializable {
     }
 
     @FXML
-    public void login(ActionEvent actionEvent) {
+    public void login(ActionEvent event) {
        int role;
        Connection conn = dbConnection.connect();
        Statement st;
@@ -62,6 +62,7 @@ public class LoginController implements Initializable {
             
             while (rs.next()) {                
                 if(rs.getInt("role")==1){
+                     ((Stage)(((Button)event.getSource()).getScene().getWindow())).close();
                     Parent root = FXMLLoader.load(getClass().getResource("/bendahara/dashboard.fxml"));
                     Stage window = new Stage();
                     window.setScene(new Scene(root,1280,720));
@@ -71,6 +72,7 @@ public class LoginController implements Initializable {
                     window.show();
                 }
                 else if(rs.getInt("role")==2){
+                     ((Stage)(((Button)event.getSource()).getScene().getWindow())).close();
                      Parent root = FXMLLoader.load(getClass().getResource("/waliKelas/finance.fxml"));
                     Stage window = new Stage();
                     

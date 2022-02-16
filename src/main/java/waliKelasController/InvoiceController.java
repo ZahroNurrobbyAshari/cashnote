@@ -4,9 +4,15 @@
  */
 package waliKelasController;
 
+import database.dbConnection;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -16,7 +22,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import model.TableArchive;
 
 /**
  * FXML Controller class
@@ -38,25 +46,64 @@ public class InvoiceController implements Initializable {
     private ChoiceBox<?> choice_date;
 
     @FXML
-    private TableColumn<?, ?> col_date;
+    private TableColumn<TableArchive, String> col_date;
 
     @FXML
-    private TableColumn<?, ?> col_desription;
+    private TableColumn<TableArchive, String> col_desription;
 
     @FXML
-    private TableColumn<?, ?> col_id;
+    private TableColumn<TableArchive, String> col_id;
 
     @FXML
-    private TableColumn<?, ?> col_income;
+    private TableColumn<TableArchive, String> col_income;
 
     @FXML
-    private TableColumn<?, ?> col_outcome;
+    private TableColumn<TableArchive, String> col_outcome;
 
     @FXML
-    private TableView<?> tableArchive;
+    private TableView<TableArchive> tableArchive;
 
     @FXML
     private void print(){
+        
+    }
+    
+    @FXML
+    public ObservableList<TableArchive> getArchiveList(){
+        ObservableList<TableArchive> list = FXCollections.observableArrayList();
+        
+        Connection conn = dbConnection.connect();
+        Statement st;
+        ResultSet rs;
+        
+        String query = "SELECT*FROM archive";
+        
+        try {
+            st = conn.createStatement();
+            rs= st.executeQuery(query);
+            
+            while (rs.next()) {                
+                list.add(new TableArchive(rs.getString("archive_id"), rs.getString("income"), rs.getString("outcome"), rs.getString("created_at"), rs.getString("description")));
+            }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+        return list;
+    }
+    
+    @FXML
+    public void showArchive(){
+        ObservableList list = getArchiveList();
+        
+        col_id.setCellValueFactory(new PropertyValueFactory<>("no"));
+        col_income.setCellValueFactory(new PropertyValueFactory<>("income"));
+        col_outcome.setCellValueFactory(new PropertyValueFactory<>("outcome"));
+        col_date.setCellValueFactory(new PropertyValueFactory<>("date"));
+        col_desription.setCellValueFactory(new PropertyValueFactory<>("description"));
+        
+        tableArchive.setItems(list);
         
     }
     
@@ -84,6 +131,7 @@ public class InvoiceController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        showArchive();
     }    
     
     

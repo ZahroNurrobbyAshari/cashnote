@@ -171,12 +171,18 @@ public class OutcomeController implements Initializable {
         String nominal=  txt_nominal.getText();
         String description = txt_desc.getText();
         String dateStr = date.getValue().toString();
-        
+        String income = "0";
+        String ref_type = "user";
+        String ref_id= "1";
         String query = "INSERT INTO outcome(name,nominal,date,description) VALUES('"+name+"','"+nominal+"','"+dateStr+"','"+description+"')";
+        
+        String query_archive = "INSERT INTO archive(income,outcome,description,ref_type,ref_id,created_at) VALUES('"+income+"','"+nominal+"','"+description+"','"+ref_type+"','"+ref_id+"',NOW())";
+
         
         try {
             st = conn.createStatement();
             st.executeUpdate(query);
+            st.executeUpdate(query_archive);
         } catch (Exception e) {
             e.printStackTrace();
         }
