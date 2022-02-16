@@ -94,6 +94,7 @@ public class OutcomeController implements Initializable {
     @FXML
     private ObservableList<Outcomes> getOutcomeList(){
         
+        
         ObservableList<Outcomes> outcomeList = FXCollections.observableArrayList();
         Connection conn = dbConnection.connect();
         Statement st;

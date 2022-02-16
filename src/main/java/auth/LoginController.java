@@ -19,6 +19,10 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Window;
 import database.dbConnection;
+import java.sql.Statement;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 
 
@@ -41,13 +45,48 @@ public class LoginController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+        
     }
 
     @FXML
     public void login(ActionEvent actionEvent) {
-        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/bendahara/dashboard"));
+       int role;
+       Connection conn = dbConnection.connect();
+       Statement st;
+       ResultSet rs;
+       String query = "SELECT*FROM user WHERE username='"+txt_username.getText()+"' AND password='"+txt_password.getText()+"'";
         
+        try {
+            st = conn.createStatement();
+            rs = st.executeQuery(query);
+            
+            while (rs.next()) {                
+                if(rs.getInt("role")==1){
+                    Parent root = FXMLLoader.load(getClass().getResource("/bendahara/dashboard.fxml"));
+                    Stage window = new Stage();
+                    window.setScene(new Scene(root,1280,720));
+                    window.setMaximized(false);
+                    window.setMaximized(true);
+                    window.setResizable(false);
+                    window.show();
+                }
+                else if(rs.getInt("role")==2){
+                     Parent root = FXMLLoader.load(getClass().getResource("/waliKelas/finance.fxml"));
+                    Stage window = new Stage();
+                    
+                    window.setScene(new Scene(root,1280,720));
+                    window.setMaximized(false);
+                    window.setMaximized(true);
+                    window.setResizable(false);
+                    window.show();
+                           
+                }
+            }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+       
     }
 
 }

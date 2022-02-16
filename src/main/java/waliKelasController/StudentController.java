@@ -20,10 +20,15 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import database.dbConnection;
+import java.io.IOException;
 import java.sql.Statement;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 import model.Students;
 
 /**
@@ -57,6 +62,10 @@ public class StudentController implements Initializable {
     private Button btn_delete;
     @FXML 
     private Button btn_reset;
+    @FXML
+    private Button btn_finance;
+    @FXML
+    private Button btn_invoice;
     
     
     @FXML
@@ -176,4 +185,22 @@ public class StudentController implements Initializable {
       txt_number.setText(null);
     }
    
+     public void switchToFinance() throws IOException{
+        Parent root = FXMLLoader.load(getClass().getResource("/waliKelas/finance.fxml"));
+        Stage window = (Stage)btn_finance.getScene().getWindow();
+        window.setScene(new Scene(root,1280,720));
+        window.setMaximized(false);
+        window.setMaximized(true);
+        window.setResizable(false);
+    }
+    
+    public void switchToInvoice() throws IOException{
+        Parent root = FXMLLoader.load(getClass().getResource("/waliKelas/invoice.fxml"));
+        Stage window = (Stage)btn_invoice.getScene().getWindow();
+        window.setScene(new Scene(root,1280,720));
+        window.setMaximized(false);
+        window.setMaximized(true);
+        window.setResizable(false);
+    }
+    
 }

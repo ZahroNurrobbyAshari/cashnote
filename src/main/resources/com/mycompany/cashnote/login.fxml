@@ -71,7 +71,7 @@
                               <Font name="Nunito Sans Regular" size="12.0" />
                            </font>
                         </PasswordField>
-                        <Button fx:id="btn_login" mnemonicParsing="false" onAction="#login" prefHeight="39.0" prefWidth="163.0" style="-fx-background-color: #413AAE; -fx-border-color: #5E5BFF; -fx-border-radius: 10; -fx-background-radius: 10;" text="Button" textFill="WHITE">
+                        <Button fx:id="btn_login" mnemonicParsing="false" onAction="#login" prefHeight="39.0" prefWidth="163.0" style="-fx-background-color: #413AAE; -fx-border-color: #5E5BFF; -fx-border-radius: 10; -fx-background-radius: 10;" text="Login" textFill="WHITE">
                            <font>
                               <Font name="Nunito Sans Regular" size="14.0" />
                            </font>
